@@ -16,4 +16,8 @@ app.get('/', (req, res) => {
     res.send('Hello Word!')
 })
 
+app.get('/cadastro', (req, res) => {
+    res.render('create')
+})
+
 app.listen(8080, () => {})
