@@ -38,4 +38,11 @@ app.post('/cadastro', async (req, res) => {
     }
 })
 
+app.get('/consultas', async (req, res) => {
+    var consultas = await appointmentService.GetAll(false);
+    
+    res.json(consultas)
+
+})
+
 app.listen(8080, () => {})

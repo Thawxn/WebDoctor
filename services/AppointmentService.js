@@ -23,6 +23,14 @@ class AppointmentService {
             return false
         }
     }
+
+    async GetAll(showFinished){
+        if(showFinished){
+            return await appo.find();
+        }else{
+            return await appo.find({finished: false});
+        }
+    }
 };
 
 module.exports = new AppointmentService();
