@@ -7,8 +7,7 @@ class AppointmentFactory {
         var hour = Number.parseInt(simpleAppointment.time.split(':')[0])
         var minutes = Number.parseInt(simpleAppointment.time.split(':')[1])
 
-        var startDate = new Date(year,month,day,hour,minutes,0,0);  
-        startDate.setHours(startDate.getHours() - 3)
+        var startDate = new Date(year,month,day,hour,minutes,0,0);
 
 
         var appo = {

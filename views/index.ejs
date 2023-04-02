@@ -6,30 +6,38 @@
     <title>Sistema</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Roboto+Condensed&display=swap" rel="stylesheet">
     <style>
         body{
             background-color: #35596a;
+            font-family: Roboto Condensed;
         }
 
         .back-text {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
-            margin-top: 20px;
+            margin-bottom: 12px;
+            margin-top: 12px;
             color: #fff;
+        }
+
+        .conteiner {
+            display: flex;
+            justify-content: center;
         }
 
         .back-calendar{
             background-color: #f8efed;
-            height: 450px;
+            height: 470px;
+            width: 85vw;
             display: flex;
             justify-content: center;
             border-radius: 10px;
-            margin: 10px;
             padding: 2%;
         }
-        #calendar{
-            width: 100vw;
+        #calendar{ 
+            width: 80vw;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -37,16 +45,23 @@
     <div class="back-text">
         <h2>Calendário de Consultas</h2>
     </div>
-
-    <div class="back-calendar">
-        <div id="calendar" class=""></div>
+    <div class="conteiner">
+        <div class="back-calendar">
+            <div id="calendar">
+        </div>
     </div>
+    </div>
+    
 </body>
 <script>
     var element = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(element, {
         initialView: 'dayGridMonth',
-        locale: 'pt-br'
+        locale: 'pt-br',
+        events: 'consultas',
+        eventClick: function(info){
+            window.location.href = '/event/'+info.event.id;
+        }
     })
 
     calendar.render()

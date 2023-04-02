@@ -44,4 +44,8 @@ app.get('/consultas', async (req, res) => {
 
 })
 
+app.get('/event/:id', async (req, res) => {
+    res.json({id: req.params.id});
+})
+
 app.listen(8080, () => {})
