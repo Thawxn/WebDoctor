@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/data', {useNewUrlParser: true, useUn
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.send('Hello Word!')
+    res.render('index')
 })
 
 app.get('/cadastro', (req, res) => {
