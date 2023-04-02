@@ -6,9 +6,41 @@
     <title>Sistema</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
+    <style>
+        body{
+            background-color: #35596a;
+        }
+
+        .back-text {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .back-calendar{
+            background-color: #f8efed;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 2%;
+        }
+        #calendar{
+            width: 100vw;
+        }
+    </style>
 </head>
 <body>
-    <div id="calendar"></div>
+    <div class="back-text">
+        <h2>Calendário de Consultas</h2>
+    </div>
+
+    <div class="back-calendar">
+        <div id="calendar" class=""></div>
+    </div>
 </body>
 <script>
     var element = document.getElementById('calendar');
