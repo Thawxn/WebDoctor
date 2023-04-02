@@ -1,11 +1,11 @@
 const appointment = require('../models/Appointment');
 const mongoose = require('mongoose');
-
-const appo = mongoose.model('Appointment', appointment);
+const Appo = mongoose.model('Appointment', appointment);
+const AppointmentFactory = require('../Factories/AppointmentFactory')
 
 class AppointmentService {
     async Create(name, email, cpf, description, date, time){
-        var newAppo = new appo({
+        var newAppo = new Appo({
             name,
             email,
             cpf,
@@ -26,9 +26,20 @@ class AppointmentService {
 
     async GetAll(showFinished){
         if(showFinished){
-            return await appo.find();
+            return await Appo.find();
         }else{
-            return await appo.find({finished: false});
+            var appos = await Appo.find({'finished': false})
+            var appointments = [];
+
+            appos.forEach(appointment => {
+                if(appointment.date != undefined){
+                    appointments.push( AppointmentFactory.Build(appointment) )
+                }
+                
+            })
+
+            return appointments
+
         }
     }
 };
