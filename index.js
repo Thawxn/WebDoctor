@@ -45,7 +45,16 @@ app.get('/consultas', async (req, res) => {
 })
 
 app.get('/event/:id', async (req, res) => {
-    res.json({id: req.params.id});
+    var appoId = await appointmentService.GetById(req.params.id)
+
+    if(appoId == undefined){
+        console.log('Cliente não existe!')
+        res.redirect('/')
+    }else{
+        console.log(appoId)
+        res.render('event', {appo: appoId});
+    }
+
 })
 
 app.listen(8080, () => {})
