@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: #35596a;
+            font-family: Roboto Condensed;
+        }
+
+        .back-text {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3%;
+            margin-top: 3%;
+            color: #fff;
+        }
+        
+        .back-search {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search {
+            background-color: #f8efed;
+            border-radius: 10px;
+            width: 650px;
+            padding: 2%;
+            margin-bottom: 2%;
+        }
+
+        .search button {
+            margin-top: 5px;
+        }
+
+        .back-conteiner {
+            display: flex;
+            justify-content: center;
+        }
+
+        .th-flex {
+            background-color: #f8efed;
+            border-radius: 10px;
+            width: 650px;
+            padding: 2%;
+            margin-bottom: 2%;
+        }
+
+        .th-flex h2 {
+            font-size: 30px;
+        }
+        .th-flex h4{
+            font-size: 20px;
+        }
+    </style>
+<body>
+    <div class="back-text">
+        <h2>Consultas de Clientes</h2>
+    </div>
+
+    <div class="back-search">
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Digite o e-mail ou CPF" class="form-control">
+            <button class="btn btn-primary form-control">Pesquisar</button>
+        </div>        
+    </div>
+
+    <div class="back-conteiner">
+        <div class="conteiner">
+
+            <% appos.forEach(appo => { %>
+                <div class="d-flex flex-column th-flex">
+                    <h3>Consulta: <%= appo.description %></h3>
+                    
+                    <h4>Name: <%= appo.name %> </h4>
+                    <h4>Email: <%= appo.email %> </h4>
+                    <h4>CPF: <%= appo.cpf %> </h4>
+                </div>
+            <% }) %>
+            
+        </div>
+    </div>
+
+</body>
+</html>
