@@ -42,6 +42,21 @@
 </head>
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Web Doctor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/list">Consultas <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/">Calendário</a>
+            <a class="nav-item nav-link" href="/cadastro">Cadastro de Consulta</a>
+          </div>
+        </div>
+    </nav>
+
     <div class="back-text">
         <h2>Consulta</h2>
     </div>
@@ -69,13 +84,3 @@
 </body>
 
 </html>
-
-<!-- <h1>Consulta: <%= appo.description %></h1>
-<hr>
-<h4>Name: <%= appo.name %> </h4>
-<h4>Email: <%= appo.email %> </h4>
-<h4>CPF: <%= appo.cpf %> </h4>
-<hr>
-<% if(!appo.finished) { %>
-    <button>Finalizar Consulta</button>
-<% } %> -->
