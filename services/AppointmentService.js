@@ -77,7 +77,16 @@ class AppointmentService {
 
     async sendNotification(){
         var appos = await this.GetAll(false);
-        console.log(appos)
+        appos.forEach(app => {
+            var date = app.start.getTime();
+            var hour = 1000 * 60 * 60;
+            var get = date-Date.now();
+
+            if(get <= hour){
+                console.log(app.title )
+                console.log('Mande um not!')
+            }
+        })
     }
 };
 
