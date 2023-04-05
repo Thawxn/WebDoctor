@@ -78,4 +78,10 @@ app.get('/searchresult', async (req, res) => {
     res.render('list', {appos: appos})
 })
 
+var pollTime = 5000
+
+setInterval( async () => {
+    await AppointmentService.sendNotification();
+}, pollTime)
+
 app.listen(8080, () => {})
