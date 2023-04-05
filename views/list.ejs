@@ -80,8 +80,10 @@
 
     <div class="back-search">
         <div class="search">
-            <input type="text" name="search" id="search" placeholder="Digite o e-mail ou CPF" class="form-control">
-            <button class="btn btn-primary form-control">Pesquisar</button>
+            <form action="/searchresult" method="get">
+                <input type="text" name="search" id="search" placeholder="Digite o e-mail ou CPF" class="form-control">
+                <button class="btn btn-primary form-control">Pesquisar</button>
+            </form>          
         </div>        
     </div>
 

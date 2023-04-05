@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const appointmentService = require('./services/AppointmentService');
+const AppointmentService = require('./services/AppointmentService');
 
 app.use(express.static('public'))
 
@@ -65,7 +66,15 @@ app.post('/finish', async (req, res) => {
 })
 
 app.get('/list', async (req, res) => {
+
+    // await AppointmentService.Search('000.000.000-00')
+
     var appos = await appointmentService.GetAll(true);
+    res.render('list', {appos: appos})
+})
+
+app.get('/searchresult', async (req, res) => {
+    var appos = await AppointmentService.Search(req.query.search)
     res.render('list', {appos: appos})
 })
 
