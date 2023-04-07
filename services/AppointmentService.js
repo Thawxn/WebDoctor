@@ -97,7 +97,7 @@ class AppointmentService {
                     await Appo.findByIdAndUpdate(app.id, ({notified: true}))
 
                     mailer.sendMail({
-                        from: 'Lucas Marques <lucas@gmail.com>',
+                        from: 'WebDoctor <webdoctor@gmail.com',
                         to: app.email,
                         subject: 'Consulta',
                         text: 'Olá, você tem uma consulta marcada hoje daqui 1hr, aguardamos você!'
